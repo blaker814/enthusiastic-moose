@@ -14,17 +14,12 @@ namespace EnthusiasticMoose
             MooseSays("H I, I'M  E N T H U S I A S T I C !");
             MooseSays("I really am enthusiastic");
 
-            bool isTrue = MooseAsks("Is Canada real?");
-            if (isTrue)
-            {
-                MooseSays("Really? It seems very unlikely.");
-            }
-            else
-            {
-                MooseSays("I  K N E W  I T !!!");
-            }
+            // Ask a question
+            Question("Is Canada real?", "Really? It seems very unlikely.", "I  K N E W  I T !!!");
+            Question("Are you enthusiastic?", "Yay!", "You should try it!");
+            Question("Do you love C# yet?", "Good job sucking up to your instructor!", "You will...oh, yes, you will...");
+            Question("Do you want to know a secret?", "ME TOO!!!! I love secrets...tell me one!", "Oh, no...secrets are the best, I love to share them!");
         }
-
         static void MooseSays(string message)
         {
             Console.WriteLine($@"
@@ -74,6 +69,18 @@ namespace EnthusiasticMoose
             else
             {
                 return false;
+            }
+        }
+        static void Question(string question, string answerYes, string answerNo)
+        {
+            bool isTrue = MooseAsks(question);
+            if (isTrue)
+            {
+                MooseSays(answerYes);
+            }
+            else
+            {
+                MooseSays(answerNo);
             }
         }
     }
